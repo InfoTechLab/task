@@ -2,23 +2,23 @@
 //	var body=document.getElementsByTagName("body")[0];
 //	var bg=document.createElement("div");
 //	bg.className="background";
-//	body.appendChild(bg);/*创建div节点，套用样式，这样背景就加在了页面上*/
+//	body.appendChild(bg);
 //	
 //	var title_1=document.createElement("h3");
 //	title_1.innerHTML="玩法介绍";
 //	title_1.className="title";
-//	body.appendChild(title_1);  /*添加标题*/
+//	body.appendChild(title_1);  
 //	
 //	var ul_1=document.createElement("ul");
-//	ul_1.className="imgs";/*1.很重要的一步，添加了整个的样式*/
-//	var li=[];/*2.创建数组*/
+//	ul_1.className="imgs";
+//	var li=[];
 //	var imgs=[];
 //	for(var i=0;i<3;i++){
 //		li[i]=document.createElement("li");
 //		imgs[i]=document.createElement("img");
-//		imgs[i].src="images/img"+(i+1)+".jpg";/*3.图片路径和css里的不一样，注意写法，注意是(i+1)*/
+//		imgs[i].src="images/img"+(i+1)+".jpg";
 //		imgs[i].alt=i+1;
-//		li[i].appendChild(imgs[i]);/*4.添加的顺序不能变，先里后外*/
+//		li[i].appendChild(imgs[i]);
 //		ul_1.appendChild(li[i]);	
 //	}
 //	body.appendChild(ul_1);
@@ -52,8 +52,8 @@
 /*用jQuery实现*/
 $(function(){
 	var $body=$("body");
-	var $bg=$("<div class='background'></div>");/*直接创建并且套用了样式*/
-	$bg.appendTo($body);     /*背景创建完了，注意是appendTo*/
+	var $bg=$("<div class='background'></div>");
+	$bg.appendTo($body);     
 	
 	var $h3_1=$("<h3 class='title'>玩法介绍</h3>");
 	$h3_1.appendTo($body);
@@ -69,4 +69,24 @@ $(function(){
 		$li_1[i].appendTo($ul_1);
 	}
 	$ul_1.appendTo($body);
+	/*第二步*/
+	var $h3_2=$("<h3 class='title'>新玩家得史诗卡</h3>");
+	$h3_2.appendTo($body);
+	var $ul_2=$("<ul class='imgs'></ul>");
+	var $li_2=[];
+	var $imgs_2=[];
+	var $p_2=[];
+	var $pText=["飞龙宝宝","女巫","王子"];
+	for(var j=0;j<3;j++){
+		$li_2[j]=$("<li></li>");
+		$imgs_2[j]=$("<img>");
+		$p_2[j]=$("<p></p>");
+		$p_2[j].html($pText[j]);  
+		$imgs_2[j].attr("src","images/ico"+(j+1)+".jpg");
+		$imgs_2[j].attr("alt",j+1);
+		$imgs_2[j].appendTo($li_2[j]);
+		$p_2[j].appendTo($li_2[j]);
+		$li_2[j].appendTo($ul_2);
+	}
+	$ul_2.appendTo($body);
 });
