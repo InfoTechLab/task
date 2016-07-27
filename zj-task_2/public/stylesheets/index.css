@@ -1,0 +1,55 @@
+body,html,div,h1,ul,li,p,span
+{
+    padding: 0;
+    margin: 0;
+}
+ul
+{
+    list-style-type: none;
+}
+body
+{
+    font-family: "微软雅黑",serif;
+}
+.bg
+{
+    background-image: url(../imgs/bg1.jpg);
+    height: 800px;
+    background-repeat: no-repeat;
+    background-position: -190px 0px;
+}
+.title
+{
+    width: 500px;
+    height: 68px;
+    border-radius: 34px;
+    margin: 34px auto;
+    background: #0a2b5e;
+    font-size: 38px;
+    color: #fff;
+    text-align: center;
+    line-height: 68px;
+}
+.imgs-1
+{
+    overflow: hidden;
+    width: 912px;
+    margin: auto;
+}
+.imgs-1 img
+{
+    width: 299px;
+    float: left;
+    margin-right: 5px;
+}
+.img-2
+{
+    overflow: hidden;
+    width: 760px;
+    margin: auto;
+}
+.img-2 li
+{
+    text-align: center;
+    float: left;
+}
